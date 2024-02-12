@@ -1,0 +1,4 @@
+cd $WINEPREFIX
+git clone https://github.com/TsegtsErdene/fastapi.git
+cd fastapi 
+uvicorn main:app --host 0.0.0.0 --port 8000

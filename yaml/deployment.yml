@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: #Dictionary
+  name: fastapi-deployment
+spec: # Dictionary
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata: # Dictionary
+      name: fastapi-pod
+      labels: # Dictionary
+        app: fastapi # Key value paids
+    spec:
+      containers: # List
+        - name: fastapi-container
+          image: tsegtsee/flaskapi
+          ports:
+            - containerPort: 3000
+            - containerPort: 8001
+            - containerPort: 8000
